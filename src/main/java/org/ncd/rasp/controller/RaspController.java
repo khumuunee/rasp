@@ -31,11 +31,11 @@ public class RaspController {
 		return raspId + "_Success";
 	}
 	
-	@PostMapping("transferPlaylist")
-	public Map<String, Object> transferPlaylist(@RequestBody Map<String, Object> param) {
+	@PostMapping("syncRaspberry")
+	public Map<String, Object> syncRaspberry(@RequestBody Map<String, Object> param) {
 		String raspId = (String) param.get("raspId");
 		try {
-			return raspService.transferPlaylist(param);
+			return raspService.syncRaspberry(param);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Map<String,Object> resWithError = ResponseTool.createResWithError(e);

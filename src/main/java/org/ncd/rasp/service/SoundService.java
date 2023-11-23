@@ -135,7 +135,8 @@ public class SoundService {
 			listSound.sort(Comparator.comparing(PlaylistSound::getOrderNumber));
 			soundPlayer.setListSound(listSound);
 		}
-		soundPlayer.playNewWithSoundName(soundName);
+		String[] split = soundName.split("ENUUGEERTASLAARAI");
+		soundPlayer.playNewWithIndex(Integer.parseInt(split[1]));
 		return ResponseTool.createRes();
 	}
 

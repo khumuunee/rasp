@@ -44,7 +44,7 @@ public class RaspService {
 	private PlayerLogRepo playerLogRepo;
 
 	@Transactional
-	public Map<String, Object> transferPlaylist(Map<String, Object> param) {
+	public Map<String, Object> syncRaspberry(Map<String, Object> param) {
 		String raspId = (String) param.get("raspId");
 		Playlist playlist = BaseTool.convertMapToObject(Playlist.class, param.get("playlist"));
 		List<PlaylistSound> listSound = BaseTool.convertLinkedToList(PlaylistSound.class, (List<?>)param.get("listSound"));

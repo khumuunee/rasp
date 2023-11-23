@@ -128,6 +128,15 @@ public class SoundPlayer {
 		currentSoundIndex = listSound.indexOf(playlistSound);
 		playNew(playlistSound);
 	}
+	public void playNewWithIndex(int index) {
+		if (BaseTool.khoosonJagsaaltEsekh(listSound))
+			return;
+		if(index > listSound.size() - 1)
+			return;
+		PlaylistSound playlistSound = listSound.get(index);
+		currentSoundIndex = index;
+		playNew(playlistSound);
+	}
 
 	public void setEndOfMediaAfterScheduledSound() {
 		mediaPlayer.setOnEndOfMedia(() -> {
